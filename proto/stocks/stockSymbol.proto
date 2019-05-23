@@ -1,0 +1,18 @@
+syntax = "proto3";
+package stocks;
+option swift_prefix="";
+message SymbolSearchResponse {
+    repeated StockSymbol symbols = 1 [json_name = "bestMatches"];
+}
+
+message StockSymbol {
+    string symbol = 1 [json_name = "1. symbol"];
+    string name = 2 [json_name = "2. name"];
+    string type = 3 [json_name = "3. type"];
+    string region = 4 [json_name = "4. region"];
+    string marketOpen = 5 [json_name = "5. marketOpen"];
+    string marketClose = 6 [json_name = "6. marketClose"];
+    string timezone = 7 [json_name = "7. timezone"];
+    string currency = 8 [json_name = "8. currency"];
+    string matchScore = 9 [json_name = "9. matchScore"];
+}
