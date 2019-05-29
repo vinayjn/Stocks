@@ -1,6 +1,7 @@
 syntax = "proto3";
 package stocks;
 option swift_prefix="";
+
 message SymbolSearchResponse {
     repeated StockSymbol symbols = 1 [json_name = "bestMatches"];
 }
