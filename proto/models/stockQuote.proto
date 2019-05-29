@@ -1,5 +1,5 @@
 syntax = "proto3";
-package stock;
+package models;
 option swift_prefix="";
 
 message StockQuoteResponse {

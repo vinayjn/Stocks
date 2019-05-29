@@ -1,5 +1,5 @@
 syntax = "proto3";
-package stocks;
+package models;
 option swift_prefix="";
 
 message SymbolSearchResponse {

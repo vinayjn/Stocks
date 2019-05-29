@@ -69,4 +69,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 # Ignore proto generated Output directory
-out/
+proto-output/
