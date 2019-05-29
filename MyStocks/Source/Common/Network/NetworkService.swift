@@ -10,8 +10,9 @@ import Foundation
 
 typealias JSON = [String : Any]
 
-enum Function: String {
-    case symbolSearch = "SYMBOL_SEARCH"
+enum Endpoint: String {
+    case symbolSearch = "search"
+    case symbolQuote = "quote"
 }
 
 enum RequestMethod: String {
@@ -57,23 +58,17 @@ extension URLRequest {
 
 final class WebClient {
     
-    func load(path: String = "", method: RequestMethod, params: JSON, completion: @escaping (Data?, ServiceError?) -> ()) -> URLSessionDataTask? {
+    func load(endpoint: Endpoint, method: RequestMethod, params: JSON, completion: @escaping (Data?, ServiceError?) -> ()) -> URLSessionDataTask? {
         // Checking internet connection availability
         if !Reachability.isConnectedToNetwork() {
             completion(nil, ServiceError.noInternetConnection)
             return nil
         }
         
-        
-        guard let config = Configuration.shared else {
-            completion(nil, ServiceError.other)
-            return nil
-        }
-        var params = params
-        params["apikey"] = config.apiKey
+        let baseUrl = "http://localhost:9090/"
         
         // Creating the URLRequest object
-        let request = URLRequest(baseUrl: config.baseUrl, path: path, method: method, params: params)
+        let request = URLRequest(baseUrl: baseUrl, path: endpoint.rawValue, method: method, params: params)
         
         // Sending request to the server.
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

@@ -15,6 +15,7 @@ protocol SearchPresenterProtocol {
 protocol SearchPresenterInteractorCallbacks {
     
     func didFind(symbols: [StockSymbol])
+    func findingSymbols(for query: String)
 }
 
 class SearchPresenter: SearchPresenterProtocol {
@@ -27,8 +28,7 @@ class SearchPresenter: SearchPresenterProtocol {
         self.interactor = interactor
     }
     
-    func searchSymbols(for query: String) {
-        view.showActivity()
+    func searchSymbols(for query: String) {        
         self.interactor.searchStocks(forQuery: query)
     }
 }
@@ -38,5 +38,9 @@ extension SearchPresenter: SearchPresenterInteractorCallbacks {
     func didFind(symbols: [StockSymbol]) {
         self.view.updateList(with: symbols)
         self.view.hideActivity()
+    }
+    
+    func findingSymbols(for query: String) {
+        self.view.showActivity()
     }
 }

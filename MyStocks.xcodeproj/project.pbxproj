@@ -10,8 +10,6 @@
 		0426C2FC139E2D0E0431CDB0 /* Pods_MyStocksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA6218E4851EEEC0908F9F0 /* Pods_MyStocksTests.framework */; };
 		9CEEAEAF37EDF68DD4EF28B4 /* Pods_MyStocksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664AD36A6125F43EB329748C /* Pods_MyStocksUITests.framework */; };
 		B221789725F1B3F541A56D47 /* Pods_MyStocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 829EAA4F3406158E1011F943 /* Pods_MyStocks.framework */; };
-		FE4C5675229583CC00DC1BCF /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE4C5674229583CC00DC1BCF /* config.plist */; };
-		FE4C56772295A81700DC1BCF /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4C56762295A81700DC1BCF /* Configuration.swift */; };
 		FE6FC327228C739700391130 /* MyStocksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6FC326228C739700391130 /* MyStocksTests.swift */; };
 		FE6FC332228C739700391130 /* MyStocksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6FC331228C739700391130 /* MyStocksUITests.swift */; };
 		FE6FC347228C74B200391130 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6FC340228C74B200391130 /* AppDelegate.swift */; };
@@ -57,8 +55,6 @@
 		A767DBEA1F451B115EF0DA73 /* Pods-MyStocksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStocksTests.debug.xcconfig"; path = "Target Support Files/Pods-MyStocksTests/Pods-MyStocksTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBA6218E4851EEEC0908F9F0 /* Pods_MyStocksTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyStocksTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD99FE48E118B32FF82DDDC0 /* Pods-MyStocksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStocksUITests.release.xcconfig"; path = "Target Support Files/Pods-MyStocksUITests/Pods-MyStocksUITests.release.xcconfig"; sourceTree = "<group>"; };
-		FE4C5674229583CC00DC1BCF /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
-		FE4C56762295A81700DC1BCF /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		FE6FC30E228C739500391130 /* MyStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6FC322228C739700391130 /* MyStocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyStocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6FC326228C739700391130 /* MyStocksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStocksTests.swift; sourceTree = "<group>"; };
@@ -187,7 +183,6 @@
 		FE6FC33F228C74B200391130 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				FE4C5674229583CC00DC1BCF /* config.plist */,
 				FE6FC340228C74B200391130 /* AppDelegate.swift */,
 				FE6FC341228C74B200391130 /* Info.plist */,
 			);
@@ -262,7 +257,6 @@
 		FE71F126228D85DF00982049 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				FE4C56762295A81700DC1BCF /* Configuration.swift */,
 				FE71F127228D85F200982049 /* NetworkService.swift */,
 				FE71F12B228D88C500982049 /* Reachability.swift */,
 				FE71F129228D88A700982049 /* ServiceError.swift */,
@@ -282,7 +276,6 @@
 				FE6FC30B228C739500391130 /* Frameworks */,
 				FE6FC30C228C739500391130 /* Resources */,
 				1E6322593B38496AD1761F9C /* [CP] Embed Pods Frameworks */,
-				FE4C567322957E5900DC1BCF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -383,7 +376,6 @@
 				FE6FC349228C74B200391130 /* Assets.xcassets in Resources */,
 				FE6FC350228C74F400391130 /* Main.storyboard in Resources */,
 				FE71F125228D64F800982049 /* SearchViewController.xib in Resources */,
-				FE4C5675229583CC00DC1BCF /* config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,23 +486,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FE4C567322957E5900DC1BCF /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/zsh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nsource $HOME/.zshrc \nBUILD_APP_DIR=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\n\npython ${SRCROOT}/generate_config.py \"${SRCROOT}\" \"${BUILD_APP_DIR}/\"\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -525,7 +500,6 @@
 				FE71F130228DA7C200982049 /* SearchWireframe.swift in Sources */,
 				FE71F128228D85F200982049 /* NetworkService.swift in Sources */,
 				FE71F12A228D88A700982049 /* ServiceError.swift in Sources */,
-				FE4C56772295A81700DC1BCF /* Configuration.swift in Sources */,
 				FE71F12C228D88C500982049 /* Reachability.swift in Sources */,
 				FECE0D942295337B003B118D /* stockSymbol.pb.swift in Sources */,
 				FE6FC347228C74B200391130 /* AppDelegate.swift in Sources */,

@@ -22,20 +22,31 @@ class SearchInteractor: SearchInteractorProtocol {
     var presenter: SearchPresenterInteractorCallbacks!
     
     func searchStocks(forQuery query: String) -> Void {
-        
-        searchRequest?.cancel()        
-        let params: [String: Any] = [
-            "function": Function.symbolSearch.rawValue,
-            "keywords": query
-        ]
-        DispatchQueue.global().async { [weak self] in
-            self?.searchRequest = WebClient().load(method: .get, params: params) { (data, error) in
-                if let data = data, let searchResponse = try? SymbolSearchResponse(jsonUTF8Data: data) {
-                    DispatchQueue.main.async {
-                        self?.presenter.didFind(symbols: searchResponse.symbols)
-                    }                    
+        searchRequest?.cancel()
+        if query.count > 2 {
+            presenter.findingSymbols(for: query)
+            let params: [String: Any] = [
+                "keyword": query
+            ]
+            DispatchQueue.global().asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                self?.searchRequest = WebClient().load(endpoint: Endpoint.symbolSearch, method: .get, params: params) { (data, error) in
+                    var symbols : [StockSymbol]
+                    
+                    defer {
+                        DispatchQueue.main.async {
+                            self?.presenter.didFind(symbols: symbols)
+                        }
+                    }
+                    
+                    if let data = data, let searchResponse = try? SymbolSearchResponse(serializedData: data) {
+                        symbols = searchResponse.symbols
+                    } else {
+                        symbols = []
+                    }
                 }
             }
-        }        
+        } else {
+            presenter.didFind(symbols: [])
+        }
     }
 }
