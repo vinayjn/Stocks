@@ -24,7 +24,6 @@
 		FE71F12A228D88A700982049 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71F129228D88A700982049 /* ServiceError.swift */; };
 		FE71F12C228D88C500982049 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71F12B228D88C500982049 /* Reachability.swift */; };
 		FE71F130228DA7C200982049 /* SearchWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71F12F228DA7C200982049 /* SearchWireframe.swift */; };
-		FECE0D942295337B003B118D /* stockSymbol.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECE0D932295337B003B118D /* stockSymbol.pb.swift */; };
 		FEE0A8B6228F4EC1004353F1 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE0A8B5228F4EC1004353F1 /* SearchPresenter.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +74,6 @@
 		FE71F129228D88A700982049 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		FE71F12B228D88C500982049 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FE71F12F228DA7C200982049 /* SearchWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWireframe.swift; sourceTree = "<group>"; };
-		FECE0D932295337B003B118D /* stockSymbol.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stockSymbol.pb.swift; sourceTree = "<group>"; };
 		FEE0A8B5228F4EC1004353F1 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,7 +247,6 @@
 				FE71F122228D64F800982049 /* SearchViewController.swift */,
 				FE71F123228D64F800982049 /* SearchViewController.xib */,
 				FE71F12F228DA7C200982049 /* SearchWireframe.swift */,
-				FECE0D932295337B003B118D /* stockSymbol.pb.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -501,7 +498,6 @@
 				FE71F128228D85F200982049 /* NetworkService.swift in Sources */,
 				FE71F12A228D88A700982049 /* ServiceError.swift in Sources */,
 				FE71F12C228D88C500982049 /* Reachability.swift in Sources */,
-				FECE0D942295337B003B118D /* stockSymbol.pb.swift in Sources */,
 				FE6FC347228C74B200391130 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

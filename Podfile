@@ -6,8 +6,8 @@ target 'MyStocks' do
   use_frameworks!
 
   # Pods for MyStocks
-  pod 'SwiftProtobuf'
   pod 'SVProgressHUD'
+  pod 'transport-contracts'
   target 'MyStocksTests' do
     inherit! :search_paths
     # Pods for testing

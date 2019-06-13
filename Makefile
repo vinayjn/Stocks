@@ -19,4 +19,4 @@ golang:
 
 swift:
 	mkdir -p $(SWIFT_OUT)
-	protoc --proto_path=$(PROTO_IMPORT_PATH) --swift_out=$(SWIFT_OUT) $(PROTO_FILES)
+	protoc --swift_opt=Visibility=Public --proto_path=$(PROTO_IMPORT_PATH) --swift_out=$(SWIFT_OUT) $(PROTO_FILES)
