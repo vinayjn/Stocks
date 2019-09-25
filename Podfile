@@ -7,7 +7,6 @@ target 'MyStocks' do
 
   # Pods for MyStocks
   pod 'SVProgressHUD'
-  pod 'transport-contracts'
   target 'MyStocksTests' do
     inherit! :search_paths
     # Pods for testing
