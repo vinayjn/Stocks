@@ -8,6 +8,8 @@
 
 import UIKit
 import SVProgressHUD
+import Contracts
+
 protocol ActivityViewProtocol {
     func showActivity() -> Void
     func hideActivity() -> Void

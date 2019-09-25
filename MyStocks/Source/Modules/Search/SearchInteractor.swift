@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftProtobuf
+import Contracts
 
 protocol SearchInteractorProtocol {
     

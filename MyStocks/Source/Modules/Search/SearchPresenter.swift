@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Contracts
 
 protocol SearchPresenterProtocol {
     func searchSymbols(for query: String) -> Void
