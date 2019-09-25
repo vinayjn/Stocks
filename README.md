@@ -7,11 +7,11 @@ Stocks is an iOS app written in Swift using the [VIPER Architecture](https://mut
 
 ### Build Environment
 
-- Xcode 10.2.1
+- Xcode 11
 
-- Swift 5
+- Swift 5.1
 
-- Cocoapods 1.6.1
+- Cocoapods 1.7.5
 - Swift Protobuf
 - Protoc
 
