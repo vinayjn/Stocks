@@ -1,0 +1,3 @@
+[submodule "submodules/Contracts"]
+	path = submodules/Contracts
+	url = git@github.com:vinayjn/stock-contracts-ios.git
