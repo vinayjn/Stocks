@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:submodules/Contracts/swift-protobuf-lib/SwiftProtobuf.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:submodules/Contracts/Contracts.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:MyStocks.xcodeproj">
    </FileRef>
    <FileRef
