@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="MyStocks" customModuleProvider="target">
             <connections>
-                <outlet property="searchBar" destination="vca-c1-4lR" id="blw-we-1Zi"/>
                 <outlet property="table" destination="Djv-hr-q3g" id="T3F-tc-rGK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,18 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vca-c1-4lR">
-                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="nWx-x8-7Sr"/>
-                    </constraints>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="S6j-v3-cez"/>
-                    </connections>
-                </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Djv-hr-q3g">
-                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="kaL-0F-Ba4"/>
@@ -43,15 +30,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Djv-hr-q3g" firstAttribute="top" secondItem="vca-c1-4lR" secondAttribute="bottom" id="12A-ka-7XR"/>
-                <constraint firstItem="vca-c1-4lR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Iae-bq-XOv"/>
-                <constraint firstItem="vca-c1-4lR" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="JwV-kW-EXw"/>
-                <constraint firstItem="vca-c1-4lR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="LnB-YY-MGh"/>
+                <constraint firstItem="Djv-hr-q3g" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="P4d-Mk-73u"/>
                 <constraint firstItem="Djv-hr-q3g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ahj-28-CiD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Djv-hr-q3g" secondAttribute="bottom" id="eqt-g4-XZX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Djv-hr-q3g" secondAttribute="trailing" id="zDe-gz-Wwt"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="147"/>
         </view>
     </objects>
 </document>

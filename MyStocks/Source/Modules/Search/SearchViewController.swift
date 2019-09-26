@@ -10,12 +10,20 @@ import UIKit
 import SVProgressHUD
 import Contracts
 
-protocol ActivityViewProtocol {
+protocol ActivityViewProtocol: class {
     func showActivity() -> Void
     func hideActivity() -> Void
 }
 
 extension ActivityViewProtocol {
+    
+    func showAlert(success: Bool, message: String) -> Void {
+        if success {
+            SVProgressHUD.showSuccess(withStatus: message)
+        } else {
+            SVProgressHUD.showError(withStatus: message)
+        }
+    }
     
     func showActivity() -> Void {
         SVProgressHUD.show()
@@ -26,16 +34,14 @@ extension ActivityViewProtocol {
 }
 
 protocol SearchViewProtocol: ActivityViewProtocol {
-    func updateList(with symbols: [StockSymbol]) -> Void
-    
+    func updateList() -> Void
 }
 
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var table: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
-    var symbols: [StockSymbol] = []
+    private let cellReuseId = "Cell"
     
     var presenter: SearchPresenterProtocol!
     
@@ -53,7 +59,20 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        self.title = "Search"
+        
+        let searchController  = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
     }
     
     func reloadList() -> Void {
@@ -61,29 +80,43 @@ class SearchViewController: UIViewController {
     }
 }
 
-extension SearchViewController: UITableViewDataSource {
+extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.symbols.count
+        return self.presenter.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.textLabel?.text = self.symbols[indexPath.row].name
+        let cell: UITableViewCell
+        
+        if let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: cellReuseId) {
+            cell = dequeuedCell
+        } else {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellReuseId)
+        }
+        
+        cell.textLabel?.text = self.presenter.titleFor(index: indexPath.row)
+        cell.detailTextLabel?.text = self.presenter.descriptionFor(index: indexPath.row)
         return cell
-    }            
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.presenter.selectedSymbolAt(index: indexPath.row)
+    }
+    
 }
 
-extension SearchViewController: UISearchBarDelegate {
+extension SearchViewController: UISearchResultsUpdating {
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.presenter.searchSymbols(for: searchText)
+    func updateSearchResults(for searchController: UISearchController) {
+        if let text = searchController.searchBar.text, !text.isEmpty {
+            self.presenter.searchSymbols(for: text)
+        }
     }
 }
 
 extension SearchViewController: SearchViewProtocol {
     
-    func updateList(with symbols: [StockSymbol]) {
-        self.symbols = symbols
+    func updateList() {
         reloadList()
     }
 }

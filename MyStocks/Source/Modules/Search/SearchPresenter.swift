@@ -10,13 +10,20 @@ import UIKit
 import Contracts
 
 protocol SearchPresenterProtocol {
+    var numberOfRows: Int { get }
+    
+    func titleFor(index: Int) -> String
+    func descriptionFor(index: Int) -> String
     func searchSymbols(for query: String) -> Void
+    func selectedSymbolAt(index: Int) -> Void
+    
 }
 
 protocol SearchPresenterInteractorCallbacks {
     
     func didFind(symbols: [StockSymbol])
     func findingSymbols(for query: String)
+    func didSave(symbol: StockSymbol, success: Bool)
 }
 
 class SearchPresenter: SearchPresenterProtocol {
@@ -24,24 +31,72 @@ class SearchPresenter: SearchPresenterProtocol {
     let view: SearchViewProtocol
     let interactor: SearchInteractorProtocol
     
+    private lazy var mainQueue = DispatchQueue.main
+    private lazy var utilityQueue = DispatchQueue.global(qos: .utility)
+    
+    private var symbols: [StockSymbol] = []
+    
     init(view: SearchViewProtocol, interactor: SearchInteractorProtocol) {
         self.view = view
         self.interactor = interactor
     }
     
+    var numberOfRows: Int {
+        return self.symbols.count
+    }
+    
+    func titleFor(index: Int) -> String {
+        return self.symbols[index].symbol
+    }
+    
+    func descriptionFor(index: Int) -> String {
+        return self.symbols[index].name
+    }
+                
     func searchSymbols(for query: String) {        
-        self.interactor.searchStocks(forQuery: query)
+        utilityQueue.async { [weak self] in
+            self?.interactor.searchStocks(forQuery: query)
+        }
+        
+    }
+    
+    func selectedSymbolAt(index: Int) {
+        utilityQueue.async {[weak self] in
+            if let symbol = self?.symbols[index] {
+                self?.interactor.saveSymbolToWatchlist(symbol: symbol)
+            } else {
+                self?.mainQueue.async {
+                    self?.view.showAlert(success: false, message: "Something went Wrong!")
+                }
+            }                        
+        }
     }
 }
 
 extension SearchPresenter: SearchPresenterInteractorCallbacks {
     
     func didFind(symbols: [StockSymbol]) {
-        self.view.updateList(with: symbols)
-        self.view.hideActivity()
+        mainQueue.async { [weak self] in
+            self?.symbols = symbols
+            self?.view.updateList()
+            self?.view.hideActivity()
+        }
     }
     
     func findingSymbols(for query: String) {
-        self.view.showActivity()
+        mainQueue.async { [weak self] in
+            self?.view.showActivity()
+        }
     }
+    
+    func didSave(symbol: StockSymbol, success: Bool) {
+        mainQueue.async { [weak self] in
+            if success {
+                self?.view.showAlert(success: true, message: "\(symbol.name) \n Saved to Watchlist")
+            } else {
+                self?.view.showAlert(success: false, message: "Couldn't save \n \(symbol.name)")
+            }                        
+        }
+    }
+    
 }
