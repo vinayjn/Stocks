@@ -48,10 +48,6 @@
 		A767DBEA1F451B115EF0DA73 /* Pods-MyStocksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStocksTests.debug.xcconfig"; path = "Target Support Files/Pods-MyStocksTests/Pods-MyStocksTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD99FE48E118B32FF82DDDC0 /* Pods-MyStocksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStocksUITests.release.xcconfig"; path = "Target Support Files/Pods-MyStocksUITests/Pods-MyStocksUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FE6FC30E228C739500391130 /* MyStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE6FC326228C739700391130 /* MyStocksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStocksTests.swift; sourceTree = "<group>"; };
-		FE6FC328228C739700391130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE6FC331228C739700391130 /* MyStocksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStocksUITests.swift; sourceTree = "<group>"; };
-		FE6FC333228C739700391130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE6FC340228C74B200391130 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE6FC341228C74B200391130 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE6FC343228C74B200391130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,8 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				FE6FC310228C739500391130 /* MyStocks */,
-				FE6FC325228C739700391130 /* MyStocksTests */,
-				FE6FC330228C739700391130 /* MyStocksUITests */,
 				FE6FC30F228C739500391130 /* Products */,
 				78045E73CC13F2CDB2DDF06E /* Pods */,
 				C15C8EDF11471A6EC96ABB62 /* Frameworks */,
@@ -132,24 +126,6 @@
 				FE6FC33F228C74B200391130 /* SupportFiles */,
 			);
 			path = MyStocks;
-			sourceTree = "<group>";
-		};
-		FE6FC325228C739700391130 /* MyStocksTests */ = {
-			isa = PBXGroup;
-			children = (
-				FE6FC326228C739700391130 /* MyStocksTests.swift */,
-				FE6FC328228C739700391130 /* Info.plist */,
-			);
-			path = MyStocksTests;
-			sourceTree = "<group>";
-		};
-		FE6FC330228C739700391130 /* MyStocksUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FE6FC331228C739700391130 /* MyStocksUITests.swift */,
-				FE6FC333228C739700391130 /* Info.plist */,
-			);
-			path = MyStocksUITests;
 			sourceTree = "<group>";
 		};
 		FE6FC33F228C74B200391130 /* SupportFiles */ = {
