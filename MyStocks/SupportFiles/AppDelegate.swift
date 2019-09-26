@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.makeKeyAndVisible()
-        rootWireFrame.showRootViewController(viewController: SearchViewController(), inWindow: window!)
+        rootWireFrame.showRootViewController(viewController: WatchlistModule().viewController, inWindow: window!)
         return true
     }
 }
