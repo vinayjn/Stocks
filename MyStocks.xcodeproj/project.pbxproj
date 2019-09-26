@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B221789725F1B3F541A56D47 /* Pods_MyStocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 829EAA4F3406158E1011F943 /* Pods_MyStocks.framework */; };
+		FE558323233D311E00BD6CE9 /* WatchlistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE558322233D311E00BD6CE9 /* WatchlistViewController.xib */; };
+		FE558329233D31FA00BD6CE9 /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE558327233D31FA00BD6CE9 /* StockCell.swift */; };
+		FE55832A233D31FA00BD6CE9 /* StockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE558328233D31FA00BD6CE9 /* StockCell.xib */; };
 		FE6FC347228C74B200391130 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6FC340228C74B200391130 /* AppDelegate.swift */; };
 		FE6FC349228C74B200391130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6FC343228C74B200391130 /* Assets.xcassets */; };
 		FE6FC34F228C74F400391130 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6FC34B228C74F400391130 /* LaunchScreen.storyboard */; };
@@ -20,6 +23,11 @@
 		FE71F12A228D88A700982049 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71F129228D88A700982049 /* ServiceError.swift */; };
 		FE71F12C228D88C500982049 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71F12B228D88C500982049 /* Reachability.swift */; };
 		FE71F130228DA7C200982049 /* SearchWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71F12F228DA7C200982049 /* SearchWireframe.swift */; };
+		FEA6CB2B233BF0C900AA0793 /* WatchlistModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA6CB26233BF0C900AA0793 /* WatchlistModule.swift */; };
+		FEA6CB2C233BF0C900AA0793 /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA6CB27233BF0C900AA0793 /* WatchlistPresenter.swift */; };
+		FEA6CB2D233BF0C900AA0793 /* WatchlistRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA6CB28233BF0C900AA0793 /* WatchlistRouter.swift */; };
+		FEA6CB2E233BF0C900AA0793 /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA6CB29233BF0C900AA0793 /* WatchlistViewController.swift */; };
+		FEA6CB2F233BF0C900AA0793 /* WatchlistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA6CB2A233BF0C900AA0793 /* WatchlistInteractor.swift */; };
 		FEE0A8B6228F4EC1004353F1 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE0A8B5228F4EC1004353F1 /* SearchPresenter.swift */; };
 		FEE1C1F8233B780700E95CE2 /* Contracts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE1C1F7233B780700E95CE2 /* Contracts.framework */; };
 		FEE1C1F9233B780700E95CE2 /* Contracts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEE1C1F7233B780700E95CE2 /* Contracts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -47,6 +55,9 @@
 		A6A002B181466A87BBD498C2 /* Pods-MyStocksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStocksTests.release.xcconfig"; path = "Target Support Files/Pods-MyStocksTests/Pods-MyStocksTests.release.xcconfig"; sourceTree = "<group>"; };
 		A767DBEA1F451B115EF0DA73 /* Pods-MyStocksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStocksTests.debug.xcconfig"; path = "Target Support Files/Pods-MyStocksTests/Pods-MyStocksTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD99FE48E118B32FF82DDDC0 /* Pods-MyStocksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStocksUITests.release.xcconfig"; path = "Target Support Files/Pods-MyStocksUITests/Pods-MyStocksUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FE558322233D311E00BD6CE9 /* WatchlistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchlistViewController.xib; sourceTree = "<group>"; };
+		FE558327233D31FA00BD6CE9 /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
+		FE558328233D31FA00BD6CE9 /* StockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCell.xib; sourceTree = "<group>"; };
 		FE6FC30E228C739500391130 /* MyStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6FC340228C74B200391130 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE6FC341228C74B200391130 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +72,11 @@
 		FE71F129228D88A700982049 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		FE71F12B228D88C500982049 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FE71F12F228DA7C200982049 /* SearchWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWireframe.swift; sourceTree = "<group>"; };
+		FEA6CB26233BF0C900AA0793 /* WatchlistModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistModule.swift; sourceTree = "<group>"; };
+		FEA6CB27233BF0C900AA0793 /* WatchlistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistPresenter.swift; sourceTree = "<group>"; };
+		FEA6CB28233BF0C900AA0793 /* WatchlistRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistRouter.swift; sourceTree = "<group>"; };
+		FEA6CB29233BF0C900AA0793 /* WatchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewController.swift; sourceTree = "<group>"; };
+		FEA6CB2A233BF0C900AA0793 /* WatchlistInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistInteractor.swift; sourceTree = "<group>"; };
 		FEE0A8B5228F4EC1004353F1 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		FEE1C1F7233B780700E95CE2 /* Contracts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Contracts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +114,15 @@
 				829EAA4F3406158E1011F943 /* Pods_MyStocks.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE558326233D31E100BD6CE9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE558327233D31FA00BD6CE9 /* StockCell.swift */,
+				FE558328233D31FA00BD6CE9 /* StockCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FE6FC305228C739500391130 = {
@@ -167,6 +192,7 @@
 		FE6FC346228C74B200391130 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FEA6CB25233BF0A700AA0793 /* Watchlist */,
 				FE71F11F228C9C7900982049 /* Search */,
 			);
 			path = Modules;
@@ -209,6 +235,20 @@
 				FE71F129228D88A700982049 /* ServiceError.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		FEA6CB25233BF0A700AA0793 /* Watchlist */ = {
+			isa = PBXGroup;
+			children = (
+				FE558326233D31E100BD6CE9 /* Views */,
+				FEA6CB26233BF0C900AA0793 /* WatchlistModule.swift */,
+				FEA6CB27233BF0C900AA0793 /* WatchlistPresenter.swift */,
+				FEA6CB28233BF0C900AA0793 /* WatchlistRouter.swift */,
+				FEA6CB29233BF0C900AA0793 /* WatchlistViewController.swift */,
+				FEA6CB2A233BF0C900AA0793 /* WatchlistInteractor.swift */,
+				FE558322233D311E00BD6CE9 /* WatchlistViewController.xib */,
+			);
+			path = Watchlist;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,9 +312,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE558323233D311E00BD6CE9 /* WatchlistViewController.xib in Resources */,
 				FE6FC34F228C74F400391130 /* LaunchScreen.storyboard in Resources */,
 				FE6FC349228C74B200391130 /* Assets.xcassets in Resources */,
 				FE6FC350228C74F400391130 /* Main.storyboard in Resources */,
+				FE55832A233D31FA00BD6CE9 /* StockCell.xib in Resources */,
 				FE71F125228D64F800982049 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,15 +370,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEA6CB2D233BF0C900AA0793 /* WatchlistRouter.swift in Sources */,
 				FEE0A8B6228F4EC1004353F1 /* SearchPresenter.swift in Sources */,
 				FE71F121228C9C8D00982049 /* SearchInteractor.swift in Sources */,
 				FE71F124228D64F800982049 /* SearchViewController.swift in Sources */,
+				FEA6CB2E233BF0C900AA0793 /* WatchlistViewController.swift in Sources */,
+				FEA6CB2B233BF0C900AA0793 /* WatchlistModule.swift in Sources */,
 				FE6FC353228C774C00391130 /* RootWireFrame.swift in Sources */,
 				FE71F130228DA7C200982049 /* SearchWireframe.swift in Sources */,
+				FEA6CB2F233BF0C900AA0793 /* WatchlistInteractor.swift in Sources */,
 				FE71F128228D85F200982049 /* NetworkService.swift in Sources */,
 				FE71F12A228D88A700982049 /* ServiceError.swift in Sources */,
 				FE71F12C228D88C500982049 /* Reachability.swift in Sources */,
 				FE6FC347228C74B200391130 /* AppDelegate.swift in Sources */,
+				FEA6CB2C233BF0C900AA0793 /* WatchlistPresenter.swift in Sources */,
+				FE558329233D31FA00BD6CE9 /* StockCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
