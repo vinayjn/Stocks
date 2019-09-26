@@ -7,14 +7,14 @@ message StockQuoteResponse {
 }
 
 message StockQuote {
-    string symbol = 1 [json_name = "1. symbol"];
-    string open = 2 [json_name = "2. open"];
-    string high = 3 [json_name = "3. high"];
-    string low = 4 [json_name = "4. low"];
-    string price = 5 [json_name = "5. price"];
-    string volume = 6 [json_name = "6. volume"];
-    string latestTradingDay = 7 [json_name = "7. latest trading day"];
-    string previousClose = 8 [json_name = "8. previous close"];
-    string change = 9 [json_name = "9. change"];
+    string symbol = 1 [json_name = "01. symbol"];
+    string open = 2 [json_name = "02. open"];
+    string high = 3 [json_name = "03. high"];
+    string low = 4 [json_name = "04. low"];
+    string price = 5 [json_name = "05. price"];
+    string volume = 6 [json_name = "06. volume"];
+    string latestTradingDay = 7 [json_name = "07. latest trading day"];
+    string previousClose = 8 [json_name = "08. previous close"];
+    string change = 9 [json_name = "09. change"];
     string changePercent = 10 [json_name = "10. change percent"];
 }
