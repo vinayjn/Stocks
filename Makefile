@@ -9,7 +9,7 @@ OUT_DIR=proto-output
 
 
 GO_OUT=$(OUT_DIR)/golang/
-SWIFT_OUT=$(OUT_DIR)/swift/
+SWIFT_OUT=submodules/Contracts/Contracts/
 
 all: golang swift
 
@@ -20,3 +20,4 @@ golang:
 swift:
 	mkdir -p $(SWIFT_OUT)
 	protoc --swift_opt=Visibility=Public --proto_path=$(PROTO_IMPORT_PATH) --swift_out=$(SWIFT_OUT) $(PROTO_FILES)
+	cd submodules/Contracts; xcodegen
