@@ -46,7 +46,7 @@ class SearchViewController: UIViewController {
     var presenter: SearchPresenterProtocol!
     
     init() {
-        super.init(nibName: "SearchViewController", bundle: Bundle.main)
+        super.init(nibName: "SearchViewController", bundle: Bundle.resourceBundle())
         let interactor = SearchInteractor()
         let presenter = SearchPresenter(view: self, interactor: interactor)
         interactor.presenter = presenter

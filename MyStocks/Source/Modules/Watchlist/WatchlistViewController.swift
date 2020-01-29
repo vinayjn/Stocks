@@ -35,7 +35,7 @@ class WatchlistViewController: UIViewController, WatchlistPresenterViewProtocol 
 
 	init(presenter: WatchlistViewPresenterProtocol) {
 		self.presenter = presenter
-		super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nil, bundle: Bundle.resourceBundle())
 	}
 
 	required init?(coder aDecoder: NSCoder) {
