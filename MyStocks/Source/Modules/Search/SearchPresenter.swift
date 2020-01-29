@@ -53,23 +53,13 @@ class SearchPresenter: SearchPresenterProtocol {
         return self.symbols[index].name
     }
                 
-    func searchSymbols(for query: String) {        
-        utilityQueue.async { [weak self] in
-            self?.interactor.searchStocks(forQuery: query)
-        }
-        
+    func searchSymbols(for query: String) {
+        self.interactor.searchStocks(forQuery: query)
     }
     
     func selectedSymbolAt(index: Int) {
-        utilityQueue.async {[weak self] in
-            if let symbol = self?.symbols[index] {
-                self?.interactor.saveSymbolToWatchlist(symbol: symbol)
-            } else {
-                self?.mainQueue.async {
-                    self?.view.showAlert(success: false, message: "Something went Wrong!")
-                }
-            }                        
-        }
+        let symbol = self.symbols[index]
+        self.interactor.saveSymbolToWatchlist(symbol: symbol)
     }
 }
 

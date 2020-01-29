@@ -44,6 +44,30 @@ final class WatchlistInteractor: WatchlistPresenterInteractorProtocol {
         let watchlist = dataList.compactMap {
             return try? StockSymbol(serializedData: $0)
         }
+        
+        
+        getQuote(forSymbol: watchlist.first!.symbol)
+        
+        
         self.presenter?.didFetchWatchlist(watchlist: watchlist, success: true)
     }
+    
+    
+    func getQuote(forSymbol symbol: String) -> Void {
+                
+        let params: [String: Any] = [
+            "symbol": symbol
+        ]
+        
+        _ = WebClient().load(endpoint: Endpoint.symbolQuote, method: .get, params: params) { (data, error) in
+            let quote: StockQuote?            
+            if let data = data, let response = try? StockQuoteResponse(serializedData: data) {
+                quote = response.quote
+            } else {
+                quote = nil
+            }
+        }
+        
+    }
+    
 }

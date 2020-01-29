@@ -48,12 +48,17 @@ class WatchlistViewController: UIViewController, WatchlistPresenterViewProtocol 
     	super.viewDidLoad()
         self.title = "Watchlist"
 		view.backgroundColor = .white
+        if let layout = watchlist.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 32, height: 80)
+        }
         
-        let layout = watchlist.collectionViewLayout as! UICollectionViewFlowLayout        
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 32, height: 80)
-        watchlist.register(UINib(nibName: "StockCell", bundle: nil), forCellWithReuseIdentifier: StockCell.reuseId)
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(openSearchVC))
+        watchlist.register(UINib(nibName: StockCell.reuseId, bundle: nil), forCellWithReuseIdentifier: StockCell.reuseId)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Add",
+            style: .plain,
+            target: self,
+            action: #selector(openSearchVC)
+        )
         
         presenter.fetchWatchlist()
         
@@ -85,9 +90,14 @@ extension WatchlistViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StockCell.reuseId, for: indexPath) as! StockCell
-        cell.stockNameLbl.text = presenter.titleFor(index: indexPath.item)
+        
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: StockCell.reuseId,
+            for: indexPath
+            ) as? StockCell else { return UICollectionViewCell() }
+                
+        cell.stockNameLbl.text = presenter.titleFor(index: indexPath.item)                
         return cell
     }
-            
+    
 }
