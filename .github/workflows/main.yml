@@ -1,14 +1,21 @@
-name: Collect Code Coverage
 on:
   push:
     branches:
     - master
-
+name: Collect Code Coverage
 jobs:
-  build:
-    env:
-      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+  test:
+    name: Clean and Build    
     runs-on: macOS-latest    
     steps:
-    - name: Collecting Coverage
-      run: bash <(curl -s https://codecov.io/bash)
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Refresh Submodules   
+        run: git submodule update --init --recursive
+      - name: Install Pods
+        run: pod install
+      - name: Clean and Build
+        run: |
+          xcodebuild clean test -workspace MyStocks.xcworkspace -scheme MyStocks -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=13.3,name=iPhone 11 Pro' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO          
+      - name: Collecting Coverage
+        run: bash <(curl -s https://codecov.io/bash)

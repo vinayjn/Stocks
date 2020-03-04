@@ -3,7 +3,7 @@ name: Build
 jobs:
   test:
     name: Clean and Build    
-    runs-on: macOS-latest    
+    runs-on: macOS-latest
     steps:
       - name: Checkout
         uses: actions/checkout@master   
