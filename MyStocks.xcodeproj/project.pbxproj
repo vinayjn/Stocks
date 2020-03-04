@@ -18,6 +18,7 @@
 		FE71F128228D85F200982049 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71F127228D85F200982049 /* NetworkService.swift */; };
 		FE71F12A228D88A700982049 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71F129228D88A700982049 /* ServiceError.swift */; };
 		FE71F12C228D88C500982049 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71F12B228D88C500982049 /* Reachability.swift */; };
+		FE81539D240F91100037B32C /* MyStocksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE81539C240F91100037B32C /* MyStocksTests.swift */; };
 		FEA6CB2B233BF0C900AA0793 /* WatchlistModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA6CB26233BF0C900AA0793 /* WatchlistModule.swift */; };
 		FEA6CB2C233BF0C900AA0793 /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA6CB27233BF0C900AA0793 /* WatchlistPresenter.swift */; };
 		FEA6CB2D233BF0C900AA0793 /* WatchlistRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA6CB28233BF0C900AA0793 /* WatchlistRouter.swift */; };
@@ -36,6 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FE81539F240F91100037B32C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE6FC306228C739500391130 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE6FC30D228C739500391130;
+			remoteInfo = MyStocks;
+		};
 		FEB37F3423E1F12C0095E768 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FE6FC306228C739500391130 /* Project object */;
@@ -84,6 +92,9 @@
 		FE71F127228D85F200982049 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		FE71F129228D88A700982049 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		FE71F12B228D88C500982049 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		FE81539A240F91100037B32C /* MyStocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyStocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE81539C240F91100037B32C /* MyStocksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStocksTests.swift; sourceTree = "<group>"; };
+		FE81539E240F91100037B32C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEA6CB26233BF0C900AA0793 /* WatchlistModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistModule.swift; sourceTree = "<group>"; };
 		FEA6CB27233BF0C900AA0793 /* WatchlistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistPresenter.swift; sourceTree = "<group>"; };
 		FEA6CB28233BF0C900AA0793 /* WatchlistRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistRouter.swift; sourceTree = "<group>"; };
@@ -103,6 +114,13 @@
 			files = (
 				FEE1C1F8233B780700E95CE2 /* Contracts.framework in Frameworks */,
 				B221789725F1B3F541A56D47 /* Pods_MyStocks.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE815397240F91100037B32C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +170,7 @@
 			children = (
 				FE6FC310228C739500391130 /* MyStocks */,
 				FEB37F2F23E1F0930095E768 /* Resources */,
+				FE81539B240F91100037B32C /* MyStocksTests */,
 				FE6FC30F228C739500391130 /* Products */,
 				78045E73CC13F2CDB2DDF06E /* Pods */,
 				C15C8EDF11471A6EC96ABB62 /* Frameworks */,
@@ -163,6 +182,7 @@
 			children = (
 				FE6FC30E228C739500391130 /* MyStocks.app */,
 				FEB37F2E23E1F0930095E768 /* Resources.bundle */,
+				FE81539A240F91100037B32C /* MyStocksTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -262,6 +282,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		FE81539B240F91100037B32C /* MyStocksTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE81539C240F91100037B32C /* MyStocksTests.swift */,
+				FE81539E240F91100037B32C /* Info.plist */,
+			);
+			path = MyStocksTests;
+			sourceTree = "<group>";
+		};
 		FEA6CB25233BF0A700AA0793 /* Watchlist */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +345,24 @@
 			productReference = FE6FC30E228C739500391130 /* MyStocks.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FE815399240F91100037B32C /* MyStocksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE8153A3240F91100037B32C /* Build configuration list for PBXNativeTarget "MyStocksTests" */;
+			buildPhases = (
+				FE815396240F91100037B32C /* Sources */,
+				FE815397240F91100037B32C /* Frameworks */,
+				FE815398240F91100037B32C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE8153A0240F91100037B32C /* PBXTargetDependency */,
+			);
+			name = MyStocksTests;
+			productName = MyStocksTests;
+			productReference = FE81539A240F91100037B32C /* MyStocksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FEB37F2D23E1F0930095E768 /* Resources */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEB37F3323E1F0930095E768 /* Build configuration list for PBXNativeTarget "Resources" */;
@@ -338,12 +385,16 @@
 		FE6FC306228C739500391130 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Vinay Jain";
 				TargetAttributes = {
 					FE6FC30D228C739500391130 = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					FE815399240F91100037B32C = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = FE6FC30D228C739500391130;
 					};
 					FEB37F2D23E1F0930095E768 = {
 						CreatedOnToolsVersion = 11.2.1;
@@ -365,6 +416,7 @@
 			targets = (
 				FE6FC30D228C739500391130 /* MyStocks */,
 				FEB37F2D23E1F0930095E768 /* Resources */,
+				FE815399240F91100037B32C /* MyStocksTests */,
 			);
 		};
 /* End PBXProject section */
@@ -378,6 +430,13 @@
 				FEB37F4023E1F3640095E768 /* LaunchScreen.storyboard in Resources */,
 				FEB37F3B23E1F28B0095E768 /* Resources.bundle in Resources */,
 				FE6FC349228C74B200391130 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE815398240F91100037B32C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,9 +518,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FE815396240F91100037B32C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE81539D240F91100037B32C /* MyStocksTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FE8153A0240F91100037B32C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE6FC30D228C739500391130 /* MyStocks */;
+			targetProxy = FE81539F240F91100037B32C /* PBXContainerItemProxy */;
+		};
 		FEB37F3523E1F12C0095E768 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FEB37F2D23E1F0930095E768 /* Resources */;
@@ -663,6 +735,48 @@
 			};
 			name = Release;
 		};
+		FE8153A1240F91100037B32C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FC224894XG;
+				INFOPLIST_FILE = MyStocksTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.vinayjain.MyStocksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyStocks.app/MyStocks";
+			};
+			name = Debug;
+		};
+		FE8153A2240F91100037B32C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FC224894XG;
+				INFOPLIST_FILE = MyStocksTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.vinayjain.MyStocksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyStocks.app/MyStocks";
+			};
+			name = Release;
+		};
 		FEB37F3123E1F0930095E768 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -714,6 +828,15 @@
 			buildConfigurations = (
 				FE6FC337228C739700391130 /* Debug */,
 				FE6FC338228C739700391130 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE8153A3240F91100037B32C /* Build configuration list for PBXNativeTarget "MyStocksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8153A1240F91100037B32C /* Debug */,
+				FE8153A2240F91100037B32C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
