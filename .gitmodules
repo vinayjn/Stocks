@@ -1,6 +1,6 @@
 [submodule "submodules/Contracts"]
 	path = submodules/Contracts
-	url = git@github.com:vinayjn/stock-contracts-ios.git
+	url = https://github.com/vinayjn/stock-contracts-ios.git
 [submodule "submodules/swift-protobuf-lib"]
 	path = submodules/swift-protobuf-lib
-	url = git@github.com:apple/swift-protobuf.git
+	url = https://github.com/apple/swift-protobuf.git
