@@ -1,6 +1,6 @@
 # Stocks
 
-![Build](https://github.com/vinayjn/Stocks-iOS/workflows/Build/badge.svg)
+![Build](https://github.com/vinayjn/Stocks-iOS/workflows/Build/badge.svg) [![codecov](https://codecov.io/gh/vinayjn/Stocks-iOS/branch/master/graph/badge.svg)](https://codecov.io/gh/vinayjn/Stocks-iOS)
 
 Stocks is an iOS app written in Swift using the [VIPER Architecture](https://mutualmobile.com/resources/meet-viper-fast-agile-non-lethal-ios-architecture-framework). The idea behind making this app was to keep API contracts(models) in sync with the backend and avoid hassles of writing of same type of code in both iOS and Android. To achieve that I have created a separate repo for the models used in the iOS app which has to be added as a Linked framework to the host app(this one). I am running a local pipeline to generate models using `protoc` with plugins for Swift and Golang. Check the [Makefile](https://github.com/vinayjn/Stocks-iOS/blob/master/Makefile) to know more about it. After generating the models locally these models are then pushed to the [stock-contracts-ios](https://github.com/vinayjn/stock-contracts-ios) repo which itself is added as a git submodule in this repo. 
 
