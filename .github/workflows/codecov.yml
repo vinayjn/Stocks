@@ -1,0 +1,14 @@
+name: Collect Code Coverage
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    env:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    runs-on: macOS-latest    
+    steps:
+    - name: Collecting Coverage
+      run: bash <(curl -s https://codecov.io/bash)
