@@ -3,6 +3,8 @@ name: Build
 jobs:
   test:
     name: Clean and Build
+    env:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     runs-on: macOS-latest    
     steps:
       - name: Checkout
