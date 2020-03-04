@@ -2,10 +2,12 @@ on:
   push:
     branches:
     - master
-name: Collect Code Coverage
+name: Code Coverage
+env: # Or as an environment variable
+  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 jobs:
   test:
-    name: Clean and Build    
+    name: Run tests
     runs-on: macOS-latest    
     steps:
       - name: Checkout
