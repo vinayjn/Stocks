@@ -9,6 +9,7 @@ jobs:
         uses: actions/checkout@master
       - name: Clean and Build
         run: |
+          git submodule update --init --recursive
           pod install
           xcodebuild clean build -workspace MyStocks.xcworkspace -scheme MyStocks -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=13.3,name=iPhone 11 Pro' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
           bash <(curl -s https://codecov.io/bash)
