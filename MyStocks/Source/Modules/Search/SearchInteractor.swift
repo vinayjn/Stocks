@@ -50,6 +50,7 @@ class SearchInteractor: SearchInteractorProtocol {
         if query.count > 2 {
             presenter.findingSymbols(for: query)
             let params: [String: Any] = [
+            let params: JSON = [
                 "keyword": query
             ]
             

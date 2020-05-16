@@ -55,7 +55,7 @@ final class WatchlistInteractor: WatchlistPresenterInteractorProtocol {
     
     func getQuote(forSymbol symbol: String) -> Void {
                 
-        let params: [String: Any] = [
+        let params: JSON = [
             "symbol": symbol
         ]
         

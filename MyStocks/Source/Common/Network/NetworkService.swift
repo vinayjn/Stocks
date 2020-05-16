@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias JSON = [String : Any]
+typealias JSON = [String: Codable]
 
 enum Endpoint: String {
     case symbolSearch = "search"
