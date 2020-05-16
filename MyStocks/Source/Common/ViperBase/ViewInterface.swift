@@ -6,7 +6,7 @@ protocol ViewInterface: class {
     func hideActivity() -> Void
 }
 
-extension ViewInterface {
+extension ViewInterface where Self: UIViewController {
     func showAlert(success: Bool, message: String) -> Void {
         if success {
             SVProgressHUD.showSuccess(withStatus: message)

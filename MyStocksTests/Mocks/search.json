@@ -1,0 +1,26 @@
+{
+    "bestMatches": [
+        {
+            "1. symbol": "BDRBF",
+            "2. name": "Bombardier",
+            "3. type": "Equity",
+            "4. region": "United States",
+            "5. marketOpen": "09:30",
+            "6. marketClose": "16:00",
+            "7. timezone": "UTC-05",
+            "8. currency": "USD",
+            "9. matchScore": "0.8571"
+        },
+        {
+            "1. symbol": "BOMN",
+            "2. name": "Boston Omaha Corporation",
+            "3. type": "Equity",
+            "4. region": "United States",
+            "5. marketOpen": "09:30",
+            "6. marketClose": "16:00",
+            "7. timezone": "UTC-05",
+            "8. currency": "USD",
+            "9. matchScore": "0.7500"
+        }
+    ]
+}
