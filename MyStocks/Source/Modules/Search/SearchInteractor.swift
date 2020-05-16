@@ -2,32 +2,29 @@
 //  SearchInteractor.swift
 //  MyStocks
 //
-//  Created by Vinay Jain on 16/05/19.
-//  Copyright © 2019 Vinay Jain. All rights reserved.
+//  Created by Vinay Jain on 16/05/20.
+//  Copyright (c) 2020 Vinay Jain. All rights reserved.
 //
 
-import Foundation
 import Contracts
+import Foundation
 
-protocol SearchInteractorProtocol {
-    
-    func searchStocks(forQuery query: String) -> Void
-    func saveSymbolToWatchlist(symbol: StockSymbol) -> Void
-}
-
-
-class SearchInteractor: SearchInteractorProtocol {
+final class SearchInteractor {
     
     private var searchRequest: URLSessionDataTask?
-    
     private let watchlistKey = "kWatchListArray"
     
-    var presenter: SearchPresenterInteractorCallbacks!
+    weak var presenter: SearchIToPInterface?
+}
+
+// MARK: - Extensions -
+
+extension SearchInteractor: SearchInteractorInterface {
     
     func saveSymbolToWatchlist(symbol: StockSymbol) {
         
         guard let symbolData = try? symbol.serializedData() else {
-            presenter.didSave(symbol: symbol, success: false)
+            self.presenter?.didSave(symbol: symbol, success: false)
             return
         }
         
@@ -42,14 +39,13 @@ class SearchInteractor: SearchInteractorProtocol {
         defaults.set(watchList, forKey: watchlistKey)
         defaults.synchronize()
         
-        presenter.didSave(symbol: symbol, success: true)
+        self.presenter?.didSave(symbol: symbol, success: true)
     }
     
     func searchStocks(forQuery query: String) -> Void {
         searchRequest?.cancel()
         if query.count > 2 {
-            presenter.findingSymbols(for: query)
-            let params: [String: Any] = [
+            self.presenter?.findingSymbols(for: query)
             let params: JSON = [
                 "keyword": query
             ]
@@ -57,7 +53,7 @@ class SearchInteractor: SearchInteractorProtocol {
             self.searchRequest = WebClient().load(endpoint: Endpoint.symbolSearch, method: .get, params: params) { (data, error) in
                 var symbols : [StockSymbol]
                 defer {
-                    self.presenter.didFind(symbols: symbols)
+                    self.presenter?.didFind(symbols: symbols)
                 }
                 
                 if let data = data, let searchResponse = try? SymbolSearchResponse(serializedData: data) {
@@ -67,7 +63,7 @@ class SearchInteractor: SearchInteractorProtocol {
                 }
             }
         } else {
-            presenter.didFind(symbols: [])
+            self.presenter?.didFind(symbols: [])
         }
     }
 }

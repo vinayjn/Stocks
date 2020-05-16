@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
         let navigationController = UINavigationController()
+        let searchWireframe = SearchWireframe()
+        navigationController.setRootWireframe(searchWireframe)
         self.window?.rootViewController = navigationController
         return true
     }

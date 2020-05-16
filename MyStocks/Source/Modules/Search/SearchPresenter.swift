@@ -2,44 +2,37 @@
 //  SearchPresenter.swift
 //  MyStocks
 //
-//  Created by Vinay Jain on 18/05/19.
-//  Copyright © 2019 Vinay Jain. All rights reserved.
+//  Created by Vinay Jain on 16/05/20.
+//  Copyright (c) 2020 Vinay Jain. All rights reserved.
 //
 
-import UIKit
 import Contracts
+import Foundation
 
-protocol SearchPresenterProtocol {
-    var numberOfRows: Int { get }
-    
-    func titleFor(index: Int) -> String
-    func descriptionFor(index: Int) -> String
-    func searchSymbols(for query: String) -> Void
-    func selectedSymbolAt(index: Int) -> Void
-    
-}
+final class SearchPresenter {
 
-protocol SearchPresenterInteractorCallbacks {
-    
-    func didFind(symbols: [StockSymbol])
-    func findingSymbols(for query: String)
-    func didSave(symbol: StockSymbol, success: Bool)
-}
-
-class SearchPresenter: SearchPresenterProtocol {
-    
-    let view: SearchViewProtocol
-    let interactor: SearchInteractorProtocol
+    // MARK: - Private properties -
+    private var symbols: [StockSymbol] = []
     
     private lazy var mainQueue = DispatchQueue.main
     private lazy var utilityQueue = DispatchQueue.global(qos: .utility)
     
-    private var symbols: [StockSymbol] = []
-    
-    init(view: SearchViewProtocol, interactor: SearchInteractorProtocol) {
+    private unowned let view: SearchViewInterface
+    private let interactor: SearchInteractorInterface
+    private let wireframe: SearchWireframeInterface
+
+    // MARK: - Lifecycle -
+
+    init(view: SearchViewInterface, interactor: SearchInteractorInterface, wireframe: SearchWireframeInterface) {
         self.view = view
         self.interactor = interactor
+        self.wireframe = wireframe
     }
+}
+
+// MARK: - Extensions -
+
+extension SearchPresenter: SearchPresenterInterface {
     
     var numberOfRows: Int {
         return self.symbols.count
@@ -63,7 +56,7 @@ class SearchPresenter: SearchPresenterProtocol {
     }
 }
 
-extension SearchPresenter: SearchPresenterInteractorCallbacks {
+extension SearchPresenter: SearchIToPInterface {
     
     func didFind(symbols: [StockSymbol]) {
         mainQueue.async { [weak self] in
@@ -85,8 +78,7 @@ extension SearchPresenter: SearchPresenterInteractorCallbacks {
                 self?.view.showAlert(success: true, message: "\(symbol.name) \n Saved to Watchlist")
             } else {
                 self?.view.showAlert(success: false, message: "Couldn't save \n \(symbol.name)")
-            }                        
+            }
         }
     }
-    
 }

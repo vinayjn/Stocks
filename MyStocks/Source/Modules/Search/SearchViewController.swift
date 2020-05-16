@@ -2,60 +2,23 @@
 //  SearchViewController.swift
 //  MyStocks
 //
-//  Created by Vinay Jain on 16/05/19.
-//  Copyright © 2019 Vinay Jain. All rights reserved.
+//  Created by Vinay Jain on 16/05/20.
+//  Copyright (c) 2020 Vinay Jain. All rights reserved.
 //
 
 import UIKit
-import SVProgressHUD
-import Contracts
 
-protocol ActivityViewProtocol: class {
-    func showActivity() -> Void
-    func hideActivity() -> Void
-}
+final class SearchViewController: UIViewController {
 
-extension ActivityViewProtocol {
-    
-    func showAlert(success: Bool, message: String) -> Void {
-        if success {
-            SVProgressHUD.showSuccess(withStatus: message)
-        } else {
-            SVProgressHUD.showError(withStatus: message)
-        }
-    }
-    
-    func showActivity() -> Void {
-        SVProgressHUD.show()
-    }
-    func hideActivity() -> Void {
-        SVProgressHUD.dismiss()
-    }
-}
+    // MARK: - Private properties -
 
-protocol SearchViewProtocol: ActivityViewProtocol {
-    func updateList() -> Void
-}
-
-class SearchViewController: UIViewController {
-    
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet private weak var table: UITableView!
     
     private let cellReuseId = "Cell"
     
-    var presenter: SearchPresenterProtocol!
-    
-    init() {
-        super.init(nibName: "SearchViewController", bundle: Bundle.resourceBundle())
-        let interactor = SearchInteractor()
-        let presenter = SearchPresenter(view: self, interactor: interactor)
-        interactor.presenter = presenter
-        self.presenter = presenter
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var presenter: SearchPresenterInterface!
+
+    // MARK: - Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +40,15 @@ class SearchViewController: UIViewController {
     
     func reloadList() -> Void {
         table.reloadData()
+    }
+    
+}
+
+// MARK: - Extensions -
+
+extension SearchViewController: SearchViewInterface {
+    func updateList() {
+        reloadList()
     }
 }
 
@@ -111,12 +83,5 @@ extension SearchViewController: UISearchResultsUpdating {
         if let text = searchController.searchBar.text, !text.isEmpty {
             self.presenter.searchSymbols(for: text)
         }
-    }
-}
-
-extension SearchViewController: SearchViewProtocol {
-    
-    func updateList() {
-        reloadList()
     }
 }
