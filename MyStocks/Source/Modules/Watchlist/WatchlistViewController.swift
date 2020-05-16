@@ -1,53 +1,27 @@
 //
 //  WatchlistViewController.swift
-//  Project: MyStocks
+//  MyStocks
 //
-//  Module: Watchlist
+//  Created by Vinay Jain on 16/05/20.
+//  Copyright (c) 2020 Vinay Jain. All rights reserved.
 //
-//  By Vinay Jain 26/09/19
-//  Vinay Jain 2019
-//
-
-// MARK: Imports
 
 import UIKit
 
-// MARK: Protocols
+final class WatchlistViewController: UIViewController {
 
-/// Should be conformed to by the `WatchlistViewController` and referenced by `WatchlistPresenter`
-protocol WatchlistPresenterViewProtocol: ActivityViewProtocol {
-	func updateWatchList()
-}
+    // MARK: - Private properties -
+    @IBOutlet private weak var watchlist: UICollectionView!
 
-// MARK: -
+    // MARK: - Public properties -
+    var presenter: WatchlistPresenterInterface!
 
-/// The View Controller for the Watchlist module
-class WatchlistViewController: UIViewController, WatchlistPresenterViewProtocol {
-
-	// MARK: - Constants
-
-	let presenter: WatchlistViewPresenterProtocol
-
-	// MARK: Variables
-
-    @IBOutlet weak var watchlist: UICollectionView!
-    // MARK: Inits
-
-	init(presenter: WatchlistViewPresenterProtocol) {
-		self.presenter = presenter
-        super.init(nibName: nil, bundle: Bundle.resourceBundle())
-	}
-
-	required init?(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-
-	// MARK: - Load Functions
-
-	override func viewDidLoad() {
-    	super.viewDidLoad()
+    // MARK: - Lifecycle -
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         self.title = "Watchlist"
-		view.backgroundColor = .white
+        view.backgroundColor = .white
         if let layout = watchlist.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 32, height: 80)
         }
@@ -57,10 +31,10 @@ class WatchlistViewController: UIViewController, WatchlistPresenterViewProtocol 
             title: "Add",
             style: .plain,
             target: self,
-            action: #selector(openSearchVC)
+            action: #selector(tappedAddButton)
         )
         
-        presenter.fetchWatchlist()
+        self.presenter.viewDidLoad()
         
     }
     
@@ -70,18 +44,20 @@ class WatchlistViewController: UIViewController, WatchlistPresenterViewProtocol 
         navigationItem.largeTitleDisplayMode = .always
     }
 
-    
-    @objc func openSearchVC() {
-        
-        self.navigationController?.pushViewController(SearchViewController(), animated: true)
+    @objc private func tappedAddButton() {
+        self.presenter.didTapAddButton()
     }
+}
+
+// MARK: - Extensions -
+
+extension WatchlistViewController: WatchlistViewInterface {
     
-	// MARK: - Watchlist Presenter to View Protocol
     func updateWatchList() {
         self.watchlist.reloadData()
     }
-    
 }
+
 
 extension WatchlistViewController: UICollectionViewDataSource {
     
@@ -96,7 +72,7 @@ extension WatchlistViewController: UICollectionViewDataSource {
             for: indexPath
             ) as? StockCell else { return UICollectionViewCell() }
                 
-        cell.stockNameLbl.text = presenter.titleFor(index: indexPath.item)                
+        cell.stockNameLbl.text = presenter.titleFor(index: indexPath.item)
         return cell
     }
     

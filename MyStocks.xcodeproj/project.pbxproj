@@ -31,6 +31,14 @@
 		FEB37F4023E1F3640095E768 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6FC34B228C74F400391130 /* LaunchScreen.storyboard */; };
 		FEE1C1F8233B780700E95CE2 /* Contracts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE1C1F7233B780700E95CE2 /* Contracts.framework */; };
 		FEE1C1F9233B780700E95CE2 /* Contracts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEE1C1F7233B780700E95CE2 /* Contracts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEEC14CE247010F90022FF27 /* StockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEEC14C6247010F90022FF27 /* StockCell.xib */; };
+		FEEC14CF247010F90022FF27 /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEC14C7247010F90022FF27 /* StockCell.swift */; };
+		FEEC14D8247011170022FF27 /* WatchlistInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEC14D2247011170022FF27 /* WatchlistInterfaces.swift */; };
+		FEEC14D9247011170022FF27 /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEC14D3247011170022FF27 /* WatchlistPresenter.swift */; };
+		FEEC14DA247011170022FF27 /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEC14D4247011170022FF27 /* WatchlistViewController.swift */; };
+		FEEC14DB247011170022FF27 /* WatchlistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEC14D5247011170022FF27 /* WatchlistInteractor.swift */; };
+		FEEC14DC247011170022FF27 /* WatchlistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEEC14D6247011170022FF27 /* WatchlistViewController.xib */; };
+		FEEC14DD247011170022FF27 /* WatchlistWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEC14D7247011170022FF27 /* WatchlistWireframe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +107,14 @@
 		FEB37F3023E1F0930095E768 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEB37F3723E1F17C0095E768 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		FEE1C1F7233B780700E95CE2 /* Contracts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Contracts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEEC14C6247010F90022FF27 /* StockCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockCell.xib; sourceTree = "<group>"; };
+		FEEC14C7247010F90022FF27 /* StockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
+		FEEC14D2247011170022FF27 /* WatchlistInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistInterfaces.swift; sourceTree = "<group>"; };
+		FEEC14D3247011170022FF27 /* WatchlistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistPresenter.swift; sourceTree = "<group>"; };
+		FEEC14D4247011170022FF27 /* WatchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewController.swift; sourceTree = "<group>"; };
+		FEEC14D5247011170022FF27 /* WatchlistInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistInteractor.swift; sourceTree = "<group>"; };
+		FEEC14D6247011170022FF27 /* WatchlistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchlistViewController.xib; sourceTree = "<group>"; };
+		FEEC14D7247011170022FF27 /* WatchlistWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistWireframe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +264,7 @@
 		FE6FC346228C74B200391130 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FEEC14D1247011030022FF27 /* Watchlist */,
 				FE04E3492470025400C599F9 /* Search */,
 			);
 			path = Modules;
@@ -294,6 +311,29 @@
 				FEB37F3723E1F17C0095E768 /* Bundle.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		FEEC14D1247011030022FF27 /* Watchlist */ = {
+			isa = PBXGroup;
+			children = (
+				FEEC14DE2470111C0022FF27 /* Views */,
+				FEEC14D2247011170022FF27 /* WatchlistInterfaces.swift */,
+				FEEC14D3247011170022FF27 /* WatchlistPresenter.swift */,
+				FEEC14D4247011170022FF27 /* WatchlistViewController.swift */,
+				FEEC14D5247011170022FF27 /* WatchlistInteractor.swift */,
+				FEEC14D6247011170022FF27 /* WatchlistViewController.xib */,
+				FEEC14D7247011170022FF27 /* WatchlistWireframe.swift */,
+			);
+			path = Watchlist;
+			sourceTree = "<group>";
+		};
+		FEEC14DE2470111C0022FF27 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FEEC14C6247010F90022FF27 /* StockCell.xib */,
+				FEEC14C7247010F90022FF27 /* StockCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,7 +444,9 @@
 				FEB37F4023E1F3640095E768 /* LaunchScreen.storyboard in Resources */,
 				FEB37F3B23E1F28B0095E768 /* Resources.bundle in Resources */,
 				FE04E3542470027500C599F9 /* SearchViewController.xib in Resources */,
+				FEEC14CE247010F90022FF27 /* StockCell.xib in Resources */,
 				FE6FC349228C74B200391130 /* Assets.xcassets in Resources */,
+				FEEC14DC247011170022FF27 /* WatchlistViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,16 +515,22 @@
 			files = (
 				FEB37F3823E1F17C0095E768 /* Bundle.swift in Sources */,
 				FE04E3512470027500C599F9 /* SearchPresenter.swift in Sources */,
+				FEEC14CF247010F90022FF27 /* StockCell.swift in Sources */,
 				FE04E3442470011300C599F9 /* FormatterInterface.swift in Sources */,
 				FE04E3462470011300C599F9 /* PresenterInterface.swift in Sources */,
 				FE04E3452470011300C599F9 /* UIStoryboardExtension.swift in Sources */,
+				FEEC14D9247011170022FF27 /* WatchlistPresenter.swift in Sources */,
 				FE04E3552470027500C599F9 /* SearchWireframe.swift in Sources */,
 				FE04E3532470027500C599F9 /* SearchInteractor.swift in Sources */,
 				FE04E3482470011300C599F9 /* InteractorInterface.swift in Sources */,
 				FE04E3472470011300C599F9 /* ViewInterface.swift in Sources */,
+				FEEC14DA247011170022FF27 /* WatchlistViewController.swift in Sources */,
+				FEEC14DB247011170022FF27 /* WatchlistInteractor.swift in Sources */,
+				FEEC14DD247011170022FF27 /* WatchlistWireframe.swift in Sources */,
 				FE71F128228D85F200982049 /* NetworkService.swift in Sources */,
 				FE04E3502470027500C599F9 /* SearchInterfaces.swift in Sources */,
 				FE71F12A228D88A700982049 /* ServiceError.swift in Sources */,
+				FEEC14D8247011170022FF27 /* WatchlistInterfaces.swift in Sources */,
 				FE04E3522470027500C599F9 /* SearchViewController.swift in Sources */,
 				FE04E3432470011300C599F9 /* BaseWireframe.swift in Sources */,
 				FE71F12C228D88C500982049 /* Reachability.swift in Sources */,

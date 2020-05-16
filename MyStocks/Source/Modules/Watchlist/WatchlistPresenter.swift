@@ -1,59 +1,46 @@
 //
 //  WatchlistPresenter.swift
-//  Project: MyStocks
+//  MyStocks
 //
-//  Module: Watchlist
-//
-//  By Vinay Jain 26/09/19
-//  Vinay Jain 2019
+//  Created by Vinay Jain on 16/05/20.
+//  Copyright (c) 2020 Vinay Jain. All rights reserved.
 //
 
-// MARK: Imports
-
-import UIKit
 import Contracts
+import Foundation
 
-// MARK: Protocols
+final class WatchlistPresenter {
 
-/// Should be conformed to by the `WatchlistPresenter` and referenced by `WatchlistViewController`
-protocol WatchlistViewPresenterProtocol {
-	func fetchWatchlist()
-    var numberOfRows: Int { get }
-    func titleFor(index: Int) -> String
-    func descriptionFor(index: Int) -> String
-}
+    // MARK: - Private properties -
 
-/// Should be conformed to by the `WatchlistPresenter` and referenced by `WatchlistInteractor`
-protocol WatchlistInteractorPresenterProtocol: class {
-	
-    
-    func didFetchWatchlist(watchlist: [StockSymbol]?, success: Bool) -> Void
-}
-
-// MARK: -
-
-/// The Presenter for the Watchlist module
-final class WatchlistPresenter: WatchlistViewPresenterProtocol, WatchlistInteractorPresenterProtocol {
-    
-	// MARK: - Constants
-
-	let router: WatchlistPresenterRouterProtocol
-	let interactor: WatchlistPresenterInteractorProtocol
+    private unowned let view: WatchlistViewInterface
+    private let interactor: WatchlistInteractorInterface
+    private let wireframe: WatchlistWireframeInterface
 
     private lazy var mainQueue = DispatchQueue.main
     private lazy var utilityQueue = DispatchQueue.global(qos: .utility)
-	// MARK: Variables
     
+    // MARK: Variables
     private var watchlist: [StockSymbol] = []
     
-	weak var view: WatchlistPresenterViewProtocol?
+    // MARK: - Lifecycle -
 
-	// MARK: Inits
+    init(view: WatchlistViewInterface, interactor: WatchlistInteractorInterface, wireframe: WatchlistWireframeInterface) {
+        self.view = view
+        self.interactor = interactor
+        self.wireframe = wireframe
+    }
+}
 
-	init(router: WatchlistPresenterRouterProtocol, interactor: WatchlistPresenterInteractorProtocol) {
-		self.router = router
-		self.interactor = interactor
-	}
+// MARK: - Extensions -
+
+extension WatchlistPresenter: WatchlistPresenterInterface {
+    
+    func viewDidLoad() {
+        utilityQueue.async { [weak self] in
+            self?.interactor.fetchStoredWatchlist()
+        }
+    }
     
     var numberOfRows: Int {
         return self.watchlist.count
@@ -67,31 +54,26 @@ final class WatchlistPresenter: WatchlistViewPresenterProtocol, WatchlistInterac
         return self.watchlist[index].name
     }
     
-	// MARK: - Watchlist View to Presenter Protocol
+    func didTapAddButton() {
+        self.wireframe.openSearch()
+    }
+}
 
-	func fetchWatchlist() {
-        utilityQueue.async { [weak self] in
-            self?.interactor.fetchStoredWatchlist()
-        }
-		
-	}
-
-	// MARK: - Watchlist Interactor to Presenter Protocol
+extension WatchlistPresenter: WatchlistIToPInterface {
+    
     func didFetchWatchlist(watchlist: [StockSymbol]?, success: Bool) -> Void {
         
-        mainQueue.async { [weak self] in
-            
+        self.mainQueue.async { [weak self] in
             guard let list = watchlist else {
-                self?.view?.showAlert(success: false, message: "Couldn't fetch Wathlist")
+                self?.view.showAlert(success: false, message: "Couldn't fetch Wathlist")
                 return
             }
-            
             if success {
                 self?.watchlist = list
-                self?.view?.updateWatchList()
-                self?.view?.hideActivity()
+                self?.view.updateWatchList()
+                self?.view.hideActivity()
             } else {
-                self?.view?.showAlert(success: false, message: "Couldn't fetch Wathlist")
+                self?.view.showAlert(success: false, message: "Couldn't fetch Wathlist")
             }
         }
     }

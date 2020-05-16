@@ -1,38 +1,37 @@
 //
 //  WatchlistInteractor.swift
-//  Project: MyStocks
+//  MyStocks
 //
-//  Module: Watchlist
-//
-//  By Vinay Jain 26/09/19
-//  Vinay Jain 2019
+//  Created by Vinay Jain on 16/05/20.
+//  Copyright (c) 2020 Vinay Jain. All rights reserved.
 //
 
-// MARK: Imports
-
-import Foundation
 import Contracts
-// MARK: Protocols
+import Foundation
 
-/// Should be conformed to by the `WatchlistInteractor` and referenced by `WatchlistPresenter`
-protocol WatchlistPresenterInteractorProtocol {
-	/// Requests the title for the presenter
-	func fetchStoredWatchlist()
-}
-
-// MARK: -
-
-/// The Interactor for the Watchlist module
-final class WatchlistInteractor: WatchlistPresenterInteractorProtocol {
+final class WatchlistInteractor {
     
     private let watchlistkey = "kWatchListArray"
+    weak var presenter: WatchlistIToPInterface?
     
-	// MARK: - Variables
+    private func getQuote(forSymbol symbol: String) -> Void {
+                
+        let params: JSON = ["symbol": symbol]
+        _ = WebClient().load(endpoint: Endpoint.symbolQuote, method: .get, params: params) { (data, error) in
+            let quote: StockQuote?
+            if let data = data, let response = try? StockQuoteResponse(serializedData: data) {
+                quote = response.quote
+            } else {
+                quote = nil
+            }
+        }
+    }
+}
 
-	weak var presenter: WatchlistInteractorPresenterProtocol?
+// MARK: - Extensions -
 
-	// MARK: - Watchlist Presenter to Interactor Protocol
-
+extension WatchlistInteractor: WatchlistInteractorInterface {
+    
     func fetchStoredWatchlist() {
         let defaults = UserDefaults.standard
         
@@ -45,29 +44,9 @@ final class WatchlistInteractor: WatchlistPresenterInteractorProtocol {
             return try? StockSymbol(serializedData: $0)
         }
         
-        
-        getQuote(forSymbol: watchlist.first!.symbol)
+        self.getQuote(forSymbol: watchlist.first!.symbol)
         
         
         self.presenter?.didFetchWatchlist(watchlist: watchlist, success: true)
     }
-    
-    
-    func getQuote(forSymbol symbol: String) -> Void {
-                
-        let params: JSON = [
-            "symbol": symbol
-        ]
-        
-        _ = WebClient().load(endpoint: Endpoint.symbolQuote, method: .get, params: params) { (data, error) in
-            let quote: StockQuote?            
-            if let data = data, let response = try? StockQuoteResponse(serializedData: data) {
-                quote = response.quote
-            } else {
-                quote = nil
-            }
-        }
-        
-    }
-    
 }
