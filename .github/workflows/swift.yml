@@ -7,5 +7,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master   
+      - name: Clean and Build
         run: |
           xcodebuild clean test -scheme 'MyStocks' -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=14.4,name=iPhone 12 mini' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
