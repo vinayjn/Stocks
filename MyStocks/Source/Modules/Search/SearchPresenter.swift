@@ -6,7 +6,7 @@
 //  Copyright (c) 2020 Vinay Jain. All rights reserved.
 //
 
-import Contracts
+import StockContracts
 import Foundation
 
 final class SearchPresenter {

@@ -1,27 +1,27 @@
-import SVProgressHUD
+import MBProgressHUD
 
 protocol ViewInterface: class {
-    func showAlert(success: Bool, message: String) -> Void
-    func showActivity() -> Void
-    func hideActivity() -> Void
+  func showAlert(success: Bool, message: String) -> Void
+  func showActivity() -> Void
+  func hideActivity() -> Void
 }
 
 extension ViewInterface where Self: UIViewController {
-    func showAlert(success: Bool, message: String) -> Void {
-        if success {
-            SVProgressHUD.showSuccess(withStatus: message)
-        } else {
-            SVProgressHUD.showError(withStatus: message)
-        }
-    }
+  func showAlert(success: Bool, message: String) -> Void {
+    let hud = MBProgressHUD(view: self.view)
+    hud.label.text = message
     
-    func showActivity() -> Void {
-        SVProgressHUD.show()
-    }
-    
-    func hideActivity() -> Void {
-        SVProgressHUD.dismiss()
-    }
+    hud.show(animated: true)
+  }
+  
+  func showActivity() -> Void {
+    let hud = MBProgressHUD(view: self.view)
+    hud.show(animated: true)
+  }
+  
+  func hideActivity() -> Void {
+    MBProgressHUD.hide(for: self.view, animated: true)
+  }
 }
 
 

@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B221789725F1B3F541A56D47 /* Pods_MyStocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 829EAA4F3406158E1011F943 /* Pods_MyStocks.framework */; };
 		FE04E3432470011300C599F9 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE04E33D2470011300C599F9 /* BaseWireframe.swift */; };
 		FE04E3442470011300C599F9 /* FormatterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE04E33E2470011300C599F9 /* FormatterInterface.swift */; };
 		FE04E3452470011300C599F9 /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE04E33F2470011300C599F9 /* UIStoryboardExtension.swift */; };
@@ -29,11 +28,11 @@
 		FE8E7BE524701A1E00839CD6 /* SearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E7BE424701A1E00839CD6 /* SearchPresenterTests.swift */; };
 		FE8E7BE824701A3800839CD6 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = FE8E7BE724701A3800839CD6 /* search.json */; };
 		FE8E7BEB24701A7700839CD6 /* Data+Addons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E7BEA24701A7700839CD6 /* Data+Addons.swift */; };
+		FEAE65FF2635D5FC00BA91DA /* StockContracts in Frameworks */ = {isa = PBXBuildFile; productRef = FEAE65FE2635D5FC00BA91DA /* StockContracts */; };
+		FEAE66052635D68F00BA91DA /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = FEAE66042635D68F00BA91DA /* MBProgressHUD */; };
 		FEB37F3823E1F17C0095E768 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB37F3723E1F17C0095E768 /* Bundle.swift */; };
 		FEB37F3B23E1F28B0095E768 /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEB37F2E23E1F0930095E768 /* Resources.bundle */; };
 		FEB37F4023E1F3640095E768 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6FC34B228C74F400391130 /* LaunchScreen.storyboard */; };
-		FEE1C1F8233B780700E95CE2 /* Contracts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE1C1F7233B780700E95CE2 /* Contracts.framework */; };
-		FEE1C1F9233B780700E95CE2 /* Contracts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEE1C1F7233B780700E95CE2 /* Contracts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FEEC14CE247010F90022FF27 /* StockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEEC14C6247010F90022FF27 /* StockCell.xib */; };
 		FEEC14CF247010F90022FF27 /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEC14C7247010F90022FF27 /* StockCell.swift */; };
 		FEEC14D8247011170022FF27 /* WatchlistInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEC14D2247011170022FF27 /* WatchlistInterfaces.swift */; };
@@ -61,28 +60,7 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		FEE1C1FA233B780700E95CE2 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				FEE1C1F9233B780700E95CE2 /* Contracts.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		2836D68A2CE17CF469C06D5A /* Pods-MyStocksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStocksUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyStocksUITests/Pods-MyStocksUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		7C29F7F928D1BD4899006AA9 /* Pods-MyStocks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStocks.release.xcconfig"; path = "Target Support Files/Pods-MyStocks/Pods-MyStocks.release.xcconfig"; sourceTree = "<group>"; };
-		829EAA4F3406158E1011F943 /* Pods_MyStocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyStocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AD6C36234A33F2BB9D3ADCC /* Pods-MyStocks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStocks.debug.xcconfig"; path = "Target Support Files/Pods-MyStocks/Pods-MyStocks.debug.xcconfig"; sourceTree = "<group>"; };
-		A6A002B181466A87BBD498C2 /* Pods-MyStocksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStocksTests.release.xcconfig"; path = "Target Support Files/Pods-MyStocksTests/Pods-MyStocksTests.release.xcconfig"; sourceTree = "<group>"; };
-		A767DBEA1F451B115EF0DA73 /* Pods-MyStocksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStocksTests.debug.xcconfig"; path = "Target Support Files/Pods-MyStocksTests/Pods-MyStocksTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BD99FE48E118B32FF82DDDC0 /* Pods-MyStocksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStocksUITests.release.xcconfig"; path = "Target Support Files/Pods-MyStocksUITests/Pods-MyStocksUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FE04E33D2470011300C599F9 /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
 		FE04E33E2470011300C599F9 /* FormatterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatterInterface.swift; sourceTree = "<group>"; };
 		FE04E33F2470011300C599F9 /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
@@ -112,7 +90,6 @@
 		FEB37F2E23E1F0930095E768 /* Resources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Resources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB37F3023E1F0930095E768 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEB37F3723E1F17C0095E768 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
-		FEE1C1F7233B780700E95CE2 /* Contracts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Contracts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEEC14C6247010F90022FF27 /* StockCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockCell.xib; sourceTree = "<group>"; };
 		FEEC14C7247010F90022FF27 /* StockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
 		FEEC14D2247011170022FF27 /* WatchlistInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistInterfaces.swift; sourceTree = "<group>"; };
@@ -128,8 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEE1C1F8233B780700E95CE2 /* Contracts.framework in Frameworks */,
-				B221789725F1B3F541A56D47 /* Pods_MyStocks.framework in Frameworks */,
+				FEAE66052635D68F00BA91DA /* MBProgressHUD in Frameworks */,
+				FEAE65FF2635D5FC00BA91DA /* StockContracts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,28 +127,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		78045E73CC13F2CDB2DDF06E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9AD6C36234A33F2BB9D3ADCC /* Pods-MyStocks.debug.xcconfig */,
-				7C29F7F928D1BD4899006AA9 /* Pods-MyStocks.release.xcconfig */,
-				A767DBEA1F451B115EF0DA73 /* Pods-MyStocksTests.debug.xcconfig */,
-				A6A002B181466A87BBD498C2 /* Pods-MyStocksTests.release.xcconfig */,
-				2836D68A2CE17CF469C06D5A /* Pods-MyStocksUITests.debug.xcconfig */,
-				BD99FE48E118B32FF82DDDC0 /* Pods-MyStocksUITests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		C15C8EDF11471A6EC96ABB62 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FEE1C1F7233B780700E95CE2 /* Contracts.framework */,
-				829EAA4F3406158E1011F943 /* Pods_MyStocks.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		FE04E33C2470011300C599F9 /* ViperBase */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,8 +160,6 @@
 				FEB37F2F23E1F0930095E768 /* Resources */,
 				FE81539B240F91100037B32C /* MyStocksTests */,
 				FE6FC30F228C739500391130 /* Products */,
-				78045E73CC13F2CDB2DDF06E /* Pods */,
-				C15C8EDF11471A6EC96ABB62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -376,12 +329,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE6FC336228C739700391130 /* Build configuration list for PBXNativeTarget "MyStocks" */;
 			buildPhases = (
-				EF791B31B1BCF03D60E4C139 /* [CP] Check Pods Manifest.lock */,
 				FE6FC30A228C739500391130 /* Sources */,
 				FE6FC30B228C739500391130 /* Frameworks */,
 				FE6FC30C228C739500391130 /* Resources */,
-				1E6322593B38496AD1761F9C /* [CP] Embed Pods Frameworks */,
-				FEE1C1FA233B780700E95CE2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -389,6 +339,10 @@
 				FEB37F3523E1F12C0095E768 /* PBXTargetDependency */,
 			);
 			name = MyStocks;
+			packageProductDependencies = (
+				FEAE65FE2635D5FC00BA91DA /* StockContracts */,
+				FEAE66042635D68F00BA91DA /* MBProgressHUD */,
+			);
 			productName = MyStocks;
 			productReference = FE6FC30E228C739500391130 /* MyStocks.app */;
 			productType = "com.apple.product-type.application";
@@ -434,7 +388,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Vinay Jain";
 				TargetAttributes = {
 					FE6FC30D228C739500391130 = {
@@ -458,6 +412,10 @@
 				Base,
 			);
 			mainGroup = FE6FC305228C739500391130;
+			packageReferences = (
+				FEAE65FD2635D5FC00BA91DA /* XCRemoteSwiftPackageReference "stock-contracts-ios" */,
+				FEAE66032635D68F00BA91DA /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+			);
 			productRefGroup = FE6FC30F228C739500391130 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -499,48 +457,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1E6322593B38496AD1761F9C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyStocks/Pods-MyStocks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyStocks/Pods-MyStocks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyStocks/Pods-MyStocks-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EF791B31B1BCF03D60E4C139 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MyStocks-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FE6FC30A228C739500391130 /* Sources */ = {
@@ -635,6 +551,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -660,7 +577,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -696,6 +613,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -715,7 +633,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -727,17 +645,11 @@
 		};
 		FE6FC337228C739700391130 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AD6C36234A33F2BB9D3ADCC /* Pods-MyStocks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FC224894XG;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftProtobuf\"",
-					"$(PROJECT_DIR)/**",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = MyStocks/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -756,17 +668,11 @@
 		};
 		FE6FC338228C739700391130 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C29F7F928D1BD4899006AA9 /* Pods-MyStocks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FC224894XG;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftProtobuf\"",
-					"$(PROJECT_DIR)/**",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = MyStocks/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -899,6 +805,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FEAE65FD2635D5FC00BA91DA /* XCRemoteSwiftPackageReference "stock-contracts-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vinayjn/stock-contracts-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
+		FEAE66032635D68F00BA91DA /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FEAE65FE2635D5FC00BA91DA /* StockContracts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEAE65FD2635D5FC00BA91DA /* XCRemoteSwiftPackageReference "stock-contracts-ios" */;
+			productName = StockContracts;
+		};
+		FEAE66042635D68F00BA91DA /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEAE66032635D68F00BA91DA /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FE6FC306228C739500391130 /* Project object */;
 }
