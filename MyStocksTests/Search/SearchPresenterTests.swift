@@ -6,7 +6,7 @@
 //  Copyright © 2020 Vinay Jain. All rights reserved.
 //
 
-import Contracts
+import StockContracts
 @testable import MyStocks
 import XCTest
 

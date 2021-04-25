@@ -24,7 +24,6 @@
 		FE71F128228D85F200982049 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71F127228D85F200982049 /* NetworkService.swift */; };
 		FE71F12A228D88A700982049 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71F129228D88A700982049 /* ServiceError.swift */; };
 		FE71F12C228D88C500982049 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71F12B228D88C500982049 /* Reachability.swift */; };
-		FE81539D240F91100037B32C /* MyStocksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE81539C240F91100037B32C /* MyStocksTests.swift */; };
 		FE8E7BE524701A1E00839CD6 /* SearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E7BE424701A1E00839CD6 /* SearchPresenterTests.swift */; };
 		FE8E7BE824701A3800839CD6 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = FE8E7BE724701A3800839CD6 /* search.json */; };
 		FE8E7BEB24701A7700839CD6 /* Data+Addons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E7BEA24701A7700839CD6 /* Data+Addons.swift */; };
@@ -82,7 +81,6 @@
 		FE71F129228D88A700982049 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		FE71F12B228D88C500982049 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FE81539A240F91100037B32C /* MyStocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyStocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE81539C240F91100037B32C /* MyStocksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStocksTests.swift; sourceTree = "<group>"; };
 		FE81539E240F91100037B32C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE8E7BE424701A1E00839CD6 /* SearchPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterTests.swift; sourceTree = "<group>"; };
 		FE8E7BE724701A3800839CD6 /* search.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 				FE8E7BE924701A3D00839CD6 /* Helpers */,
 				FE8E7BE624701A2400839CD6 /* Mocks */,
 				FE8E7BE3247019C100839CD6 /* Search */,
-				FE81539C240F91100037B32C /* MyStocksTests.swift */,
 				FE81539E240F91100037B32C /* Info.plist */,
 			);
 			path = MyStocksTests;
@@ -493,7 +490,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE8E7BE524701A1E00839CD6 /* SearchPresenterTests.swift in Sources */,
-				FE81539D240F91100037B32C /* MyStocksTests.swift in Sources */,
 				FE8E7BEB24701A7700839CD6 /* Data+Addons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
